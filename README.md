@@ -12,5 +12,7 @@ Both the aggregate energy consumption and the aggregate generation due to wind a
 - New Random Variable Energy Surplus/Deficit at time period *t*: *S(t) = G(t) - D(t)*.
 
 **Storage policy by Virtual Utility to deal with the variations**
-- Hydro state at time period *t*: *H(t) = H(t-1) + S(t-1)*, where *H(t)>0* is storage, and *H(t)<0* is generation. *H(t)* is also limited to its maximum storage capacity (*H_c*) and its maximum generation capacity (*H_g*). To make the calculations, we probably need to define the initial state *H(0)*.
+- Need for hydro at time period *t*: *H(t) = F(t-1) + S(t-1)*, where *H(t)>0* is need for storage, and *H(t)<0* is need for generation. 
+- H(t) is unbounded, while the Hydro (Queue) State at *t*: *F(t) =* min{*H(t),H_c*} if *H(t)>0* OR max{*H(t),H_g*} if *H(t) <=0*, since there is limitation of maximum storage capacity (*H_c*) and of maximum generation capacity (*H_g*). 
+- To make the calculations, we probably need to define the initial state H(0) and F(0).
 
